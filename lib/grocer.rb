@@ -1,16 +1,34 @@
 def find_item_by_name_in_collection(name, collection)
-  # Implement me first!
-  #
-  # Consult README for inputs and outputs
-
+  i = 0
+  answer = nil
+  while i < collection.length do
+    if collection[i][:item] == name
+      answer = collection[i]
+    end
+    i += 1
+  end
+  answer
 end
 
 def consolidate_cart(cart)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This returns a new Array that represents the cart. Don't merely
-  # change `cart` (i.e. mutate) it. It's easier to return a new thing.
-
+  receipt = nil
+  subcart = []
+  
+  i = 0 
+  while i < cart.length do
+    subcart << cart[i]
+    i += 1 
+  end
+  
+  i = 0 
+  while i < subcart.length do
+    subcart[i][:count] = subcart.count{|x| x == subcart[i]}
+    i += 1
+  end
+  
+  receipt = subcart.uniq
+  
+  receipt
 end
 
 
