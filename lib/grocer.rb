@@ -11,7 +11,6 @@ def find_item_by_name_in_collection(name, collection)
 end
 
 def consolidate_cart(cart)
-  receipt = nil
   subcart = []
   
   i = 0 
@@ -26,9 +25,7 @@ def consolidate_cart(cart)
     i += 1
   end
   
-  receipt = subcart.uniq
-  
-  receipt
+  subcart.uniq
 end
 
 
